@@ -1,0 +1,147 @@
+mport 'package:flutter/material.dart';
+import 'package:khizar/home.dart';
+
+
+class App extends StatefulWidget {
+  const App({ Key? key }) : super(key: key);
+
+  @override
+  _AppState createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        
+          
+          centerTitle: false,
+          backgroundColor: Colors.greenAccent,
+          elevation: 100,
+          leading:Row(
+            children: [
+              Text("Whats App"),
+             SizedBox(width: 20,),
+            
+  IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt)),
+              SizedBox(width: 30,),
+
+                 Text("Chats"),
+               SizedBox(width: 30,),
+              
+
+              Text("Status"),
+              SizedBox(width: 30,),
+
+              IconButton(onPressed: (){}, icon: Icon(Icons.call)),
+              Text("Calls"),
+             
+              SizedBox(width: 30,),
+IconButton(onPressed: (){}, icon: Icon(Icons.search)),
+
+           
+      
+                  
+            ]
+            
+            
+            )
+
+    ),
+            
+          
+          
+          
+    
+        
+      body: Column(
+        children: [
+          ListTile(
+            leading: CircleAvatar(
+              radius: 50,
+        
+              backgroundImage: NetworkImage('data:image/jpeg;base64,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'),
+          ),
+
+          title: Text("Yahya"),
+          subtitle: Text("Assalam o Alikum"),
+          trailing: Column(
+            children: [
+              Text("12.00 Am"),
+              
+              CircleAvatar(backgroundColor: Colors.green, radius:10,child: Text("2")),
+
+
+              
+            ]
+          ),
+        ),
+         
+
+            ListTile(
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwoyQ-2mo8avGTEZKbIQ8pqiaIAwVrnkWPbQ&usqp=CAU'),
+            radius: 50,  ),
+              title: Text("Salman"),
+              subtitle:Row(
+                children: [
+                   Icon(Icons.done_all,color:Colors.blue),
+               Text("send me ?"),
+                ]
+              ),
+            trailing: Column(
+              children: [
+                Text("1:33 Am"),
+              ]
+            )
+            ),
+
+
+            ListTile(
+              leading:CircleAvatar(backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7-_ejhfjun3WS6ya6cX5xO38IAZcA5S8em6u-wQHQwrijW4jrI57-NDbbszUJXhZjbo&usqp=CAU'),
+              radius: 50,) ,
+              title: Text("yasir"),
+              subtitle:Row(
+                children: [
+                   Icon(Icons.done_all,color:Colors.blue),
+               Text("send me ?"),
+                ]
+              ),
+            trailing: Column(
+              children: [
+                Text("1:33 Am"),
+              ]
+            )
+            ),
+
+
+ListTile(
+  leading: CircleAvatar(backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNuTiuu8gz-FhfAjgWJicZe1H2pfYqckiV6cJtYEz3aKhngiGqO4BUZ0kb5HgejW72ur8&usqp=CAU'),
+ radius: 50,
+  ),
+
+ title: Text("Asad"),
+              subtitle:Row(
+                children: [
+                  Icon(Icons.photo),
+                  Text("photo"),
+        
+                ],
+              ),
+              trailing: Column(children: [
+                Text("8:09Am")
+              ],
+              ),
+            ),
+
+
+
+              ]
+                    )
+         
+
+      
+      );
+  }
+}
